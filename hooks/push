@@ -1,0 +1,7 @@
+#!/bin/bash
+
+image_name_w_date="${IMAGE_NAME}-$(date +%Y%m%d)"
+
+docker tag "${IMAGE_NAME}" "${image_name_w_date}"
+docker push "${IMAGE_NAME}"
+docker push "${image_name_w_date}"
