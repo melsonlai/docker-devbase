@@ -11,14 +11,4 @@ RUN apt-get -qq update && \
       apt-get clean && \
       ( cd /usr/local/lib && curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar )
 
-# nodejs for json2nnapi
-RUN ( curl -sL https://deb.nodesource.com/setup_13.x | bash - ) && \
-      apt-get install -yqq nodejs && \
-      apt-get clean
-
-# ndk-dev
-RUN apt-get -qq update && \
-      apt-get install -yqq bison build-essential curl dos2unix flex git make pbzip2 python python-pip texinfo uuid-runtime zip && \
-      apt-get clean
-
 
