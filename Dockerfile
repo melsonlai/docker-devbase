@@ -11,4 +11,10 @@ RUN apt-get -qq update && \
       apt-get clean && \
       ( cd /usr/local/lib && curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar )
 
+# tvm4j
+# also `openjdk-8-jdk`
+RUN apt-get -qq update && \
+      apt-get install -yqq maven && \
+      apt-get clean
+
 
