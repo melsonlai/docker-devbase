@@ -17,4 +17,7 @@ RUN apt-get -qq update && \
       apt-get install -yqq maven && \
       apt-get clean
 
-
+# ninja for android studio
+RUN apt-get -qq update && \
+      apt-get install -yqq ninja-build && \
+      apt-get clean
