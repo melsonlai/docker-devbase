@@ -21,3 +21,9 @@ RUN apt-get -qq update && \
 RUN apt-get -qq update && \
       apt-get install -yqq ninja-build && \
       apt-get clean
+
+# zip for creating native lib jar for android studio
+RUN apt-get -qq update && \
+      apt-get install -yqq zip && \
+      apt-get clean
+
