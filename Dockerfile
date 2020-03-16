@@ -1,4 +1,4 @@
-FROM melsonlai/docker-devbase:base
+FROM melsonlai/docker-devbase:llvm
 
 # tvm
 RUN apt-get -qq update && \
@@ -10,22 +10,6 @@ RUN apt-get -qq update && \
       apt-get install -yqq openjdk-8-jdk && \
       apt-get clean && \
       ( cd /usr/local/lib && curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar )
-
-# tvm4j
-# also `openjdk-8-jdk`
-RUN apt-get -qq update && \
-      apt-get install -yqq maven && \
-      apt-get clean
-
-# ninja for android studio
-RUN apt-get -qq update && \
-      apt-get install -yqq ninja-build && \
-      apt-get clean
-
-# zip for creating native lib jar for android studio
-RUN apt-get -qq update && \
-      apt-get install -yqq zip && \
-      apt-get clean
 
 # onnx deps
 RUN apt-get -qq update && \
