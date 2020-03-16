@@ -27,3 +27,8 @@ RUN apt-get -qq update && \
       apt-get install -yqq zip && \
       apt-get clean
 
+# onnx deps
+RUN apt-get -qq update && \
+      apt-get install -yqq protobuf-compiler libprotoc-dev && \
+      apt-get clean
+
