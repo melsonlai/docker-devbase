@@ -16,3 +16,7 @@ RUN apt-get -qq update && \
       apt-get install -yqq protobuf-compiler libprotoc-dev && \
       apt-get clean
 
+# openvpn for android connection over the internet
+RUN apt-get -qq update && \
+      apt-get install -yqq openvpn && \
+      apt-get clean
