@@ -15,3 +15,8 @@ RUN apt-get -qq update && \
       apt-get clean && \
       ( cd /usr/local/lib && curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar )
 
+# python3-venv
+RUN apt-get -qq update && \
+      apt-get install -yqq python3-venv && \
+      apt-get clean
+
