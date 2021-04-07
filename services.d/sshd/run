@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv /bin/bash
 
-exec sshd -D
+exec /usr/sbin/sshd -D
 

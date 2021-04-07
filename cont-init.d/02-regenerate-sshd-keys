@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv /bin/bash
+
+if [[ ! -f /root/.sshd_keys_regenerated ]]; then
+  rm /etc/ssh/ssh_host_*
+  ssh-keygen -A
+  touch /root/.sshd_keys_regenerated
+fi
+
