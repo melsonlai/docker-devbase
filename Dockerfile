@@ -20,6 +20,12 @@ RUN apt-get -qq update && \
       apt-get install -yqq ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers clinfo beignet-opencl-icd && \
       apt-get clean
 
+# google test
+RUN apt-get -qq update && \
+      apt-get install -yqq googletest && \
+      apt-get clean && \
+      ( cd /usr/src/googletest && cmake . && make -j8 && make install )
+
 RUN apt-get -qq update && \
       apt-get install -yqq python3-venv direnv gdb && \
       apt-get clean
