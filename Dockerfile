@@ -15,16 +15,16 @@ RUN apt-get -qq update && \
       apt-get clean && \
       ( cd /usr/local/lib && curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar )
 
-# intel opencl
-RUN apt-get -qq update && \
-      apt-get install -yqq ocl-icd-libopencl1 ocl-icd-opencl-dev opencl-headers clinfo beignet-opencl-icd && \
-      apt-get clean
-
 # google test
 RUN apt-get -qq update && \
       apt-get install -yqq googletest && \
       apt-get clean && \
       ( cd /usr/src/googletest && cmake . && make -j8 && make install )
+
+# intel opencl
+RUN apt-get -qq update && \
+      apt-get install -yqq intel-opencl-icd libnuma1 clinfo && \
+      apt-get clean
 
 RUN apt-get -qq update && \
       apt-get install -yqq python3-venv direnv gdb && \
